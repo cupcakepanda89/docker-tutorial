@@ -6,7 +6,7 @@
     </head>
     <body>
         <h1>Hello World! Greetings from GitHub!</h1>
-        <img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png">
+        <img src="Octocat.jpg">
         <p> <?php echo 'We are running PHP, version: ' . phpversion(); ?></p>
         <?
         $database = "zavrel_db";
@@ -14,7 +14,7 @@
         $password = "password";
         $host = "mysql";
 
-        $connection = new PDO("mysql:host={$host};dbname={$database};charset=utf8", $user, $password);
+        $connection = new PDO("mysql:host={$host};dbname={$database};charset=utf8;port=3306", $user, $password);
        	$query = $connection->query("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_TYPE='BASE TABLE'");
         $tables = $query->fetchAll(PDO::FETCH_COLUMN);
 
